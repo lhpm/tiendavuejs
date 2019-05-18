@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tienda XYZ</title>
+  <!-- Declaraciópn de manifest -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#EF5350">
+  <!-- Detección de Icono de PWA -->
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/icon_16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/icon_32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="./img/icon_64x64.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/icon_96x96.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="./img/icon_128x128.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./img/icon_192x192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="./img/icon_256x256.png">
+  <link rel="icon" type="image/png" sizes="384x384" href="./img/icon_384x384.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./img/icon_512x512.png">
+  <link rel="icon" type="image/png" sizes="1024x1024" href="./img/icon_1024x1024.png">
+  <!-- Metatags iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-title" content="Tienda XYZ">
+  <link rel="apple-touch-icon" sizes="192x192" href="./img/icon_192x192.png">
+  <!-- Metatags Windows -->
+  <meta name="msapplication-TileColor" content="#EF5350">
+  <meta name="msapplication-TileImage" content="./img/icon_192x192.png">
+  <!-- Otros Metatags -->
+  <meta property="og:title" content="Noticias">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./img/icon_128x128.png">
+  <meta property="og:site_name" content="Tienda XYZ">
+  <meta property="og:url" content="http://luismachadoportafolio.com.co">
+  <!-- Meta Geo -->
+  <meta name="geo.region" content="CO-DC" />
+  <meta name="geo.placename" content="Aurora" />
+  <meta name="geo.position" content="41.317844;-81.345019" />
+  <meta name="ICBM" content="41.317844, -81.345019" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="css/vuetify.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+
+ <div id="app">
+   <v-app id="inspire">
+    <div class="text-sm-center">
+ <v-card-title class="red lighten-1 white--text">
+            <span class="headline">Tienda XYZ</span>
+            <v-spacer></v-spacer>
+            <v-menu bottom left>
+              <v-btn slot="activator" icon dark>
+                <v-icon>more_vert</v-icon>
+              </v-btn>
+              <v-list>
+                <v-list-tile v-for="link in links">
+                  <v-btn 
+                  flat
+                  large
+                  :to = "link.url">{{ link.titulo }}</v-btn>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+</v-card-title>
+             <h1>TIENDA X Y Z muy pronto</h1>
+
+             <router-view></router-view>
+
+     <v-footer height="auto" class="grey darken-3">
+      <v-layout row wrap justify-center>
+        <v-btn
+          v-for="footer in footers"
+          :key="footer"
+          color="white"
+          flat
+          :to="footer.url"
+        >
+          {{ footer.titulo }}
+        </v-btn>
+        <v-flex xs12 py-3 text-xs-center white--text>
+          &copy;2018 — <strong>Tienda XYZ</strong>
+        </v-flex>
+      </v-layout>
+  </v-footer>
+    
+
+    </div>
+  </v-app>
+
+
+
+
+ </div>
+  <script src="./script.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/vue-resource.js"></script>
+  <script src="js/vuetify.js"></script>
+  <script src="js/vue-router.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script src="componente.js"></script>
+
+</body>
+</html>
